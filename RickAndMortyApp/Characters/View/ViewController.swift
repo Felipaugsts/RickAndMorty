@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewController: UIViewController, UISearchBarDelegate {
     var fieldState: Bool = false
+    var data: CharacterViewModel = RickAndMortyContainer.shared.resolve(CharacterViewModel.self)!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet weak var CharacterCollectionView: UICollectionView!
@@ -20,6 +22,13 @@ class ViewController: UIViewController, UISearchBarDelegate {
         self.navigationItem.titleView?.isHidden = true
         searchBar.delegate = self
         // Do any additional setup after loading the view.
+        
+        data.fetchCharacter()
+        data.onShowCharacters = {
+            DispatchQueue.main.async {
+                self.CharacterCollectionView.reloadData()
+            }
+        }
 
     }
     
@@ -55,13 +64,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data.Allcharacters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = CharacterCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CharacterCVCell else {
+        guard let cell = CharacterCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CharacterCell else {
             fatalError()
         }
+        let character = data.Allcharacters[indexPath.row]
+        cell.title.text = character.name
+        cell.imageView.sd_setImage(with: URL(string: "\(character.image)"), placeholderImage: UIImage(named: "placeholder.png"))
+    
+        
         return cell
     }
     
