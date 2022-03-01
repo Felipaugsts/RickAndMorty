@@ -7,6 +7,7 @@ target 'RickAndMortyApp' do
 	
 pod 'Swinject'
 pod 'SDWebImage'
+pod 'lottie-ios'
 
   # Pods for RickAndMortyApp
 

@@ -11,4 +11,5 @@ class CharacterCell: UICollectionViewCell {
     
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    
 }
