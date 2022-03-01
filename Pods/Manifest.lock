@@ -1,4 +1,5 @@
 PODS:
+  - Hero (1.6.1)
   - lottie-ios (3.3.0)
   - SDWebImage (5.12.3):
     - SDWebImage/Core (= 5.12.3)
@@ -6,21 +7,24 @@ PODS:
   - Swinject (2.8.1)
 
 DEPENDENCIES:
+  - Hero (~> 1.6)
   - lottie-ios
   - SDWebImage
   - Swinject
 
 SPEC REPOS:
   trunk:
+    - Hero
     - lottie-ios
     - SDWebImage
     - Swinject
 
 SPEC CHECKSUMS:
+  Hero: 215865ba3ae41dd9bb08cd6c60a645529c6fc94b
   lottie-ios: 6ac74dcc09904798f59b18cb3075c089d76be9ae
   SDWebImage: 53179a2dba77246efa8a9b85f5c5b21f8f43e38f
   Swinject: 97112918bd7e0785dc2df7036213f3c8cbba6586
 
-PODFILE CHECKSUM: 163a8416eeee077b3e32048ff5ab967afa655378
+PODFILE CHECKSUM: bd3246aa963cb828feb32fa33214046d1cda1981
 
 COCOAPODS: 1.11.2

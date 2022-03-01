@@ -21,6 +21,7 @@
 		C5AE763027CAE5DE00A17801 /* CharactersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE762F27CAE5DE00A17801 /* CharactersViewModel.swift */; };
 		C5AE763327CAE6E400A17801 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE763227CAE6E400A17801 /* DI.swift */; };
 		C5AE763727CAF28000A17801 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE763627CAF28000A17801 /* CharacterCell.swift */; };
+		C5ED692827CEB2F1000EBDBD /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5ED692727CEB2F1000EBDBD /* DetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C5AE762F27CAE5DE00A17801 /* CharactersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModel.swift; sourceTree = "<group>"; };
 		C5AE763227CAE6E400A17801 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		C5AE763627CAF28000A17801 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
+		C5ED692727CEB2F1000EBDBD /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			children = (
 				C5AE760727C9726000A17801 /* ViewController.swift */,
 				C5AE763627CAF28000A17801 /* CharacterCell.swift */,
+				C5ED692727CEB2F1000EBDBD /* DetailsViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -278,6 +281,7 @@
 				C5AE763027CAE5DE00A17801 /* CharactersViewModel.swift in Sources */,
 				C5AE762D27CAE19800A17801 /* Model.swift in Sources */,
 				C5AE763327CAE6E400A17801 /* DI.swift in Sources */,
+				C5ED692827CEB2F1000EBDBD /* DetailsViewController.swift in Sources */,
 				C5AE762B27CAE19000A17801 /* Api.swift in Sources */,
 				C5AE760827C9726000A17801 /* ViewController.swift in Sources */,
 				C5AE763727CAF28000A17801 /* CharacterCell.swift in Sources */,

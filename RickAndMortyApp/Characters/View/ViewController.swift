@@ -8,11 +8,13 @@
 import UIKit
 import SDWebImage
 import Lottie
+import Hero
 
 class ViewController: UIViewController, UISearchBarDelegate {
     var fieldState: Bool = false
     var data: CharacterViewModel = RickAndMortyContainer.shared.resolve(CharacterViewModel.self)!
     var Characters: [Characters] = []
+    var character: [Characters] = []
     
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet var searchBar: UISearchBar!
@@ -23,6 +25,9 @@ class ViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hero.isEnabled = true
+        CharacterCollectionView.heroID = "bg"
+        CharacterCollectionView.hero.modifiers = [.cascade]
         self.navigationItem.titleView = searchBar
         self.navigationItem.titleView?.isHidden = true
         searchBar.delegate = self
@@ -112,13 +117,21 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         guard let cell = CharacterCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? CharacterCell else {
             fatalError()
         }
-        let character = self.Characters[indexPath.row]
-        cell.title.text = character.name
-        cell.imageView.sd_setImage(with: URL(string: "\(character.image)"), placeholderImage: UIImage(named: "placeholder.png"))
-    
-        
+        cell.configCell(with: Characters[indexPath.row])
+        cell.hero.modifiers = [.fade, .scale(0.5)]
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.character = []
+        self.character = [Characters[indexPath.row]]
+        performSegue(withIdentifier: "characterDetail", sender: self)
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! DetailsViewController
+        vc.character = self.character
+    }
     
+
 }
