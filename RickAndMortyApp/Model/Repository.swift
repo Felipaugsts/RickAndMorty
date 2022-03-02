@@ -9,6 +9,7 @@ import Foundation
 
 protocol RickAndMortyRepositoryProtocol {
     func fetchCharacters(complition: @escaping (Character) -> ())
+    func fetchLocation( complition: @escaping (Planets) -> ())
 }
 
 class RicknMortyRepository: RickAndMortyRepositoryProtocol {
@@ -20,8 +21,11 @@ class RicknMortyRepository: RickAndMortyRepositoryProtocol {
     
     func fetchCharacters(complition: @escaping (Character) -> ()) {
         api.getCharacters(complition: complition)
-        print("repository", complition)
     }
     
+    func fetchLocation( complition: @escaping (Planets) -> ()) {
+        api.fetchLocation(complition: complition)
+        print("repo")
+    }
     
 }

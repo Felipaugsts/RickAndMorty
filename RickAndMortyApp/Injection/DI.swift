@@ -16,8 +16,13 @@ class RickAndMortyContainer {
         
         container.register(RicknMortyRepository.self) { r in RicknMortyRepository(api: r.resolve(RickandMortyProtocol.self)!)
         }
+        
+        
+//        MARK: VIEW MODELS
+        
         container.register(CharacterViewModel.self) { r in CharacterViewModel(repository:  r.resolve(RicknMortyRepository.self)!)
         }
+        container.register(locationViewModel.self) { r in locationViewModel(repository: r.resolve(RicknMortyRepository.self)!)}
     
         return container
     }

@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import CoreMedia
 
 protocol RickandMortyProtocol {
     
     func getCharacters(complition: @escaping (Character) -> ())
+    func fetchLocation(complition: @escaping (Planets) -> ())
 }
 
 class RicknMortyApi: RickandMortyProtocol {
@@ -35,5 +37,22 @@ class RicknMortyApi: RickandMortyProtocol {
         }.resume()
     }
     
-    
+    func fetchLocation(complition: @escaping (Planets) -> ()) {
+        
+        guard let sourceURL = URL(string: "\(baseURL)location") else {
+            return
+        }
+        
+        URLSession.shared.dataTask(with: sourceURL) { (Data, Response, Error) in
+            if let data = Data {
+                do {
+                    let results = try! JSONDecoder().decode(Planets.self, from: data)
+                    complition(results)
+                }
+                catch {
+                    print("error", Error)
+                }
+            }
+        }.resume()
+    }
 }

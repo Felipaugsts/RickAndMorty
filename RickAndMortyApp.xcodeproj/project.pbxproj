@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		2956452C449322B813F3158C /* Pods_RickAndMortyApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2743CCFE728B166E5F24175 /* Pods_RickAndMortyApp.framework */; };
+		C5082BD827CFDF60009EEFD1 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5082BD727CFDF60009EEFD1 /* LocationViewController.swift */; };
+		C5082BDA27CFDFA2009EEFD1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5082BD927CFDFA2009EEFD1 /* CollectionViewCell.swift */; };
+		C5082BDF27CFE10B009EEFD1 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5082BDE27CFE10B009EEFD1 /* LocationModel.swift */; };
+		C5082BE327CFE32F009EEFD1 /* Location View Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5082BE227CFE32F009EEFD1 /* Location View Model.swift */; };
 		C5AE760427C9726000A17801 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE760327C9726000A17801 /* AppDelegate.swift */; };
 		C5AE760627C9726000A17801 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE760527C9726000A17801 /* SceneDelegate.swift */; };
 		C5AE760827C9726000A17801 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5AE760727C9726000A17801 /* ViewController.swift */; };
@@ -28,6 +32,10 @@
 		3BDF988DA9A06F00A8B1C4D9 /* Pods-RickAndMortyApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp.release.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp/Pods-RickAndMortyApp.release.xcconfig"; sourceTree = "<group>"; };
 		90A4698906D2E4BB2A2500EE /* Pods-RickAndMortyApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickAndMortyApp.debug.xcconfig"; path = "Target Support Files/Pods-RickAndMortyApp/Pods-RickAndMortyApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A2743CCFE728B166E5F24175 /* Pods_RickAndMortyApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RickAndMortyApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5082BD727CFDF60009EEFD1 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		C5082BD927CFDFA2009EEFD1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		C5082BDE27CFE10B009EEFD1 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		C5082BE227CFE32F009EEFD1 /* Location View Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location View Model.swift"; sourceTree = "<group>"; };
 		C5AE760027C9726000A17801 /* RickAndMortyApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RickAndMortyApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5AE760327C9726000A17801 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C5AE760527C9726000A17801 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C5082BD427CFDF3F009EEFD1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C5082BD527CFDF49009EEFD1 /* Locations */,
+				C5AE762427CAE12D00A17801 /* Characters */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C5082BD527CFDF49009EEFD1 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				C5082BE127CFE320009EEFD1 /* ViewModel */,
+				C5082BD627CFDF50009EEFD1 /* View */,
+				C5082BE027CFE112009EEFD1 /* Model */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		C5082BD627CFDF50009EEFD1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C5082BD727CFDF60009EEFD1 /* LocationViewController.swift */,
+				C5082BD927CFDFA2009EEFD1 /* CollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C5082BE027CFE112009EEFD1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5082BDE27CFE10B009EEFD1 /* LocationModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5082BE127CFE320009EEFD1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5082BE227CFE32F009EEFD1 /* Location View Model.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C5AE75F727C9726000A17801 = {
 			isa = PBXGroup;
 			children = (
@@ -100,7 +152,7 @@
 				C5AE763127CAE6CE00A17801 /* Injection */,
 				C5AE762727CAE16D00A17801 /* Model */,
 				C5AE762527CAE14000A17801 /* Common */,
-				C5AE762427CAE12D00A17801 /* Characters */,
+				C5082BD427CFDF3F009EEFD1 /* Views */,
 				C5AE760927C9726000A17801 /* Main.storyboard */,
 				C5AE760C27C9726200A17801 /* Assets.xcassets */,
 				C5AE760E27C9726200A17801 /* LaunchScreen.storyboard */,
@@ -278,17 +330,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5082BDF27CFE10B009EEFD1 /* LocationModel.swift in Sources */,
 				C5AE763027CAE5DE00A17801 /* CharactersViewModel.swift in Sources */,
 				C5AE762D27CAE19800A17801 /* Model.swift in Sources */,
 				C5AE763327CAE6E400A17801 /* DI.swift in Sources */,
+				C5082BD827CFDF60009EEFD1 /* LocationViewController.swift in Sources */,
 				C5ED692827CEB2F1000EBDBD /* DetailsViewController.swift in Sources */,
 				C5AE762B27CAE19000A17801 /* Api.swift in Sources */,
 				C5AE760827C9726000A17801 /* ViewController.swift in Sources */,
 				C5AE763727CAF28000A17801 /* CharacterCell.swift in Sources */,
+				C5082BDA27CFDFA2009EEFD1 /* CollectionViewCell.swift in Sources */,
 				C5AE760427C9726000A17801 /* AppDelegate.swift in Sources */,
 				C5AE762927CAE18300A17801 /* Repository.swift in Sources */,
 				C5AE762227CA909700A17801 /* CharacterCVCell.swift in Sources */,
 				C5AE760627C9726000A17801 /* SceneDelegate.swift in Sources */,
+				C5082BE327CFE32F009EEFD1 /* Location View Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
